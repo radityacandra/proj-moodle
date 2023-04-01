@@ -11,12 +11,6 @@ RUN apt-get install -y libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 RUN apt-get install -y libxml2-dev
 RUN docker-php-ext-install xml
-RUN apt-get install -y zlib1g-dev libpng-dev libjpeg-dev libfreetype6-dev
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg
-RUN docker-php-ext-install gd
-RUN docker-php-ext-install opcache
-RUN apt-get install -y libzip-dev
-RUN docker-php-ext-install zip
 RUN a2dissite 000-default.conf
 
 COPY . /var/www/html/
