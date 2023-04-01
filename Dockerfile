@@ -19,7 +19,7 @@ RUN apt-get install -y libzip-dev
 RUN docker-php-ext-install zip
 RUN a2dissite 000-default.conf
 
-ADD moodle-latest-401.tgz /var/www/html/ 
+COPY . /var/www/html/
  
 RUN mkdir /var/www/html/moodledata 
  
